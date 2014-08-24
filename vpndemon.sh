@@ -30,7 +30,7 @@ member="VpnStateChanged"
                 currentDate=`date +'%m-%d-%Y %r'`
 
                 echo "VPN Disconnected $currentDate"
-                echo "# VPN Disconnected $currentDate" > '/tmp/testpipe' ; sleep 1
+                echo "# VPN Disconnected $currentDate" > '/tmp/testpipe'
 
                 # Kill target process.
                 for i in `pgrep $killProgramName`
