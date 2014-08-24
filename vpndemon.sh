@@ -4,26 +4,41 @@ killProgramName="calc"
 interface="org.freedesktop.NetworkManager.VPN.Connection"
 member="VpnStateChanged"
 
-# Monitor for VPNStateChanged event.
-dbus-monitor --system "type='signal',interface='$interface',member='$member'" |
+# Clear log file.
+> /tmp/testpipe
+
+(tail -q -f /tmp/testpipe) |
 {
-    # Read output from dbus.
-    while read -r line
-    do
-        # Check if this a VPN disconnected (uint32 7) event.
-        if [ x"$(echo "$line" | grep 'uint32 7')" != x ]
-        then
-            echo ""
-            date
+    zenity --progress --title="VPNDemon" --text="Monitoring VPN"
 
-            echo "VPN Disconnected!"
+    # Kill all child processes upon exit. kill 0 sends a SIGTERM to the whole process group, thus killing also descendants.
+    trap "kill 0" SIGINT SIGTERM EXIT
 
-            # Kill target process.
-            for i in `pgrep $killProgramName`
-            do
-                echo "Terminated $i."
-                kill $i
-            done
-        fi
-    done
+    # Terminate app.
+    kill $$
+} |
+{
+    # Monitor for VPNStateChanged event.
+    dbus-monitor --system "type='signal',interface='$interface',member='$member'" |
+    {
+        # Read output from dbus.
+        (while read -r line
+        do
+            # Check if this a VPN disconnected (uint32 7) event.
+            if [ x"$(echo "$line" | grep 'uint32 7')" != x ]
+            then
+                currentDate=`date +'%m-%d-%Y %r'`
+
+                echo "VPN Disconnected $currentDate"
+                echo "# VPN Disconnected $currentDate" > '/tmp/testpipe' ; sleep 1
+
+                # Kill target process.
+                for i in `pgrep $killProgramName`
+                do
+                    echo "Terminated $i."
+                    kill $i
+                done
+            fi
+        done)
+    }
 }
