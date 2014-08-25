@@ -26,11 +26,18 @@ header="VPNDemon\nhttps://github.com/primaryobjects/vpndemon\n\n"
         # Read output from dbus.
         (while read -r line
         do
+            currentDate=`date +'%m-%d-%Y %r'`
+
+            # Check if this a VPN connection (uint32 2) event.
+            if [ x"$(echo "$line" | grep 'uint32 3')" != x ]
+            then
+                echo "VPN Connected $currentDate"
+                echo "# $header VPN Connected $currentDate" >> "$logPath"
+            fi
+
             # Check if this a VPN disconnected (uint32 7) event.
             if [ x"$(echo "$line" | grep 'uint32 7')" != x ]
             then
-                currentDate=`date +'%m-%d-%Y %r'`
-
                 echo "VPN Disconnected $currentDate"
                 echo "# $header VPN Disconnected $currentDate" >> "$logPath"
 
