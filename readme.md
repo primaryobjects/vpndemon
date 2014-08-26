@@ -18,7 +18,6 @@ Install
 ---
 
 1. Download [vpndemon.sh](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/vpndemon.sh) and place it in a folder, such as ~/Documents/vpndemon.
-
  ```sh
  cd ~/Documents/vpndemon
  bash vpndemon.sh
@@ -35,6 +34,23 @@ Install
 4. Try disconnecting your VPN. VPNDemon will detect the disconnect, kill all instances of the target program, and update its status.
 
  ![Detecting a VPN disconnect](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot4.png)
+
+Installing as an Application
+---
+
+1. Set the script to have executable permissions by right-clicking vpndemon.sh, select Properties, click Permissions tab, and checkmark "Execute" for all 3 rows.
+
+2. Create an application entry by navigating to /usr/share/applications and creating a file named VPNDemon.desktop with the following content:
+ ```sh
+ [Desktop Entry]
+ Version=1.0
+ Type=Application
+ Exec=/home/nada/Documents/vpndemon/vpndemon.sh
+ Name=VPNDemon
+ Icon=/usr/share/icons/gnome/32x32/devices/ac-adapter.png
+ ```
+
+3. Open the start menu and search for VPNDemon. Right-click the result and select "Add to Panel" or "Add to Desktop".
 
 Technical Details
 ---
