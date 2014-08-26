@@ -16,10 +16,7 @@ then
         zenity --progress --title="VPNDemon" --text="$header Monitoring VPN" --pulsate
 
         # Kill all child processes upon exit. kill 0 sends a SIGTERM to the whole process group, thus killing also descendants.
-        trap "kill 0" SIGINT SIGTERM EXIT
-
-        # Terminate app.
-        kill $$
+        trap "kill -- -$$" SIGINT SIGTERM EXIT
     } |
     {
         # Monitor for VPNStateChanged event.
