@@ -42,19 +42,11 @@ Install
 Installing as an Application
 ---
 
-1. Set the script to have executable permissions by right-clicking vpndemon.sh, select Properties, click Permissions tab, and checkmark "Execute" for all 3 rows.
+1. Set the install script to have executable permissions by right-clicking install.sh, select Properties, click Permissions tab, and checkmark "Execute" for all 3 rows.
 
-2. Create an application entry by navigating to /usr/share/applications and creating a file named VPNDemon.desktop with the following content:
- ```sh
- [Desktop Entry]
- Version=1.0
- Type=Application
- Exec=/home/YOURUSERNAME/Documents/vpndemon/vpndemon.sh
- Name=VPNDemon
- Icon=/usr/share/icons/gnome/32x32/devices/ac-adapter.png
- ```
+2. Double-click install.sh to run the installer.
 
-3. Open the start menu and search for VPNDemon. Right-click the result and select "Add to Panel" or "Add to Desktop".
+3. After installing, open the start menu and search for VPNDemon. Right-click the result and select "Add to Panel" or "Add to Desktop".
 
 Technical Details
 ---
