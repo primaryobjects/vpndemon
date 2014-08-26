@@ -31,7 +31,7 @@ Install
 
  ![Monitoring VPN connection](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot2.png)
 
-3. VPNDemon is now monitoring your VPN connection. Go ahead and connect to your VPN. VPNDemon will detect the connection and update its status.
+3. VPNDemon is now monitoring your VPN connection. If your not already connected to your VPN, go ahead and connect now.
 
  ![Detecting a VPN connection](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot3.png)
 
