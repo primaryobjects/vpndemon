@@ -8,6 +8,18 @@ header="VPNDemon\nhttps://github.com/primaryobjects/vpndemon\n\n"
 # Clear log file.
 > "$logPath"
 
+list_descendants()
+{
+    local children=$(ps -o pid= --ppid "$1")
+
+    for pid in $children
+    do
+        list_descendants "$pid"
+    done
+
+    echo "$children"
+}
+
 killProgramName=$(zenity --entry --title="VPNDemon" --text="$header Enter name of process to kill when VPN disconnects:")
 result=$?
 if [ $result = 0 ]
@@ -18,8 +30,8 @@ then
         {
             zenity --progress --title="VPNDemon" --text="$header Monitoring VPN" --pulsate
 
-            # Kill all child processes upon exit. kill 0 sends a SIGTERM to the whole process group, thus killing also descendants.
-            trap "kill -- -$$" SIGINT SIGTERM EXIT
+            # Kill all child processes upon exit.
+            kill $(list_descendants $$)
         } |
         {
             # Monitor for VPNStateChanged event.
