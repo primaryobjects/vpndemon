@@ -42,11 +42,13 @@ Install
 Installing as an Application
 ---
 
-1. Set the install script to have executable permissions by right-clicking install.sh, select Properties, click Permissions tab, and checkmark "Execute" for all 3 rows.
+1. Download [vpndemon.sh](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/vpndemon.sh) and [install.sh](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/install.sh). Run install.sh.
+ ```sh
+ cd ~/Documents/vpndemon
+ sudo bash install.sh
+ ```
 
-2. Double-click install.sh to run the installer.
-
-3. After installing, open the start menu and search for VPNDemon. Right-click the result and select "Add to Panel" or "Add to Desktop".
+2. After installing, open the start menu and search for VPNDemon. Right-click the result and select "Add to Panel" or "Add to Desktop".
 
 Technical Details
 ---
