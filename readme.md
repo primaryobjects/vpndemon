@@ -49,7 +49,7 @@ Installing as an Application
  [Desktop Entry]
  Version=1.0
  Type=Application
- Exec=/home/nada/Documents/vpndemon/vpndemon.sh
+ Exec=/home/YOURUSERNAME/Documents/vpndemon/vpndemon.sh
  Name=VPNDemon
  Icon=/usr/share/icons/gnome/32x32/devices/ac-adapter.png
  ```
