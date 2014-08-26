@@ -23,9 +23,13 @@ Install
  bash vpndemon.sh
  ```
 
-2. Enter the name of a program to kill when the VPN disconnects. This can be a substring of the name, such as "chrome", "firefox", etc. Click OK to start monitoring.
+2. Enter the name of a program to kill when the VPN disconnects. This can be a substring of the name, such as "chrome", "firefox", etc.
 
- ![Enter a target process to kill upon VPN disconnect](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot2.png)
+ ![Enter a target process to kill upon VPN disconnect](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot1.png)
+
+3. Click OK to start monitoring.
+
+ ![Monitoring VPN connection](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot2.png)
 
 3. VPNDemon is now monitoring your VPN connection. Go ahead and connect to your VPN. VPNDemon will detect the connection and update its status.
 
