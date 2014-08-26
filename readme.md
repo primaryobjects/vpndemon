@@ -34,7 +34,7 @@ Install
 
 4. Try disconnecting your VPN. VPNDemon will detect the disconnect, kill all instances of the target program, and update its status.
 
- ![Detecting a VPN disconnect](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot3.png)
+ ![Detecting a VPN disconnect](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot4.png)
 
 Technical Details
 ---
