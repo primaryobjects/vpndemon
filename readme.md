@@ -3,14 +3,14 @@ VPNDemon
 ### for Linux
 
 
-VPNDemon monitors your VPN connection and upon disconnect, kills a target program. It's the safest and easiest way to help prevent DNS leaks and enhance your security while connected over a VPN.
+VPNDemon monitors your VPN connection and kills a target program upon disconnect. It's the safest and easiest way to help prevent DNS leaks and enhance your security while connected over a VPN.
 
 ![Screenshot 1](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot4.png)
 
 It's as simple as this:
 
 - Run vpndemon.sh.
-- Enter the name of the target process to kill, upon VPN disconnect.
+- Enter the name of the target process to kill when the VPN disconnects.
 
 That's it!
 
@@ -24,7 +24,7 @@ Install
  bash vpndemon.sh
  ```
 
-2. Enter the name of a program to kill upon VPN disconnect, then click OK. This can be a substring of the name, such as "chrome", "firefox", etc.
+2. Enter the name of a program to kill when the VPN disconnects. This can be a substring of the name, such as "chrome", "firefox", etc. Click OK to start monitoring.
 
  ![Enter a target process to kill upon VPN disconnect](https://raw.githubusercontent.com/primaryobjects/vpndemon/master/screenshots/screenshot2.png)
 
