@@ -66,10 +66,12 @@ Since the NetworkManager is being listened to, directly via the [dbus-monitor](h
 
 VPNDemon should be compatible with any linux system that uses NetworkManager for VPN connections.
 
-What Else Can I Do to Prevent DNS Leaks?
+Preventing DNS Leaks with IPv6
 ---
 
-You can disable IPv6 for enhanced privacy. This is easy to do. Edit the file /etc/sysctl.conf and add the following lines:
+If you want even tighter privacy, you can disable IPv6. This is easy to do. IPv6 incorporates hardware MAC addresses, and since many VPN services do not yet route IPv6 traffic, it creates a potential leak for online activity.
+
+To disable IPv6, edit the file /etc/sysctl.conf and add the following lines:
 ```sh
 net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
