@@ -20,12 +20,20 @@ list_descendants()
     echo "$children"
 }
 
-killProgramName=$(zenity --entry --title="VPNDemon" --text="$header Enter name of process to kill when VPN disconnects:")
+# Consider the first argument as the target process
+killProgramName="$1"
+if [ -z "$killProgramName" ]
+then
+	killProgramName=$(zenity --entry --title="VPNDemon" --text="$header Enter name of process to kill when VPN disconnects:")
+fi
+
 result=$?
 if [ $result = 0 ]
 then
     if [ $killProgramName ]
     then
+	header="$header Target: $killProgramName\n\n"
+
         (tail -f "$logPath") |
         {
             zenity --progress --title="VPNDemon" --text="$header Monitoring VPN" --pulsate
