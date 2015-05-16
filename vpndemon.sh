@@ -24,7 +24,7 @@ list_descendants()
 killProgramName="$1"
 if [ -z "$killProgramName" ]
 then
-	killProgramName=$(zenity --entry --title="VPNDemon" --text="$header Enter name of process to kill when VPN disconnects:")
+    killProgramName=$(zenity --entry --title="VPNDemon" --text="$header Enter name of process to kill when VPN disconnects:")
 fi
 
 result=$?
@@ -32,7 +32,7 @@ if [ $result = 0 ]
 then
     if [ $killProgramName ]
     then
-	header="$header Target: $killProgramName\n\n"
+        header="$header Target: $killProgramName\n\n"
 
         (tail -f "$logPath") |
         {
