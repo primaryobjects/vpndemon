@@ -58,7 +58,7 @@ then
                     fi
 
                     # Check if this a VPN disconnected (uint32 7) event.
-                    if [ x"$(echo "$line" | grep 'uint32 7')" != x ]
+                    if [ x"$(echo "$line" | grep 'uint32 6\|uint32 7')" != x ]
                     then
                         echo "VPN Disconnected $currentDate"
                         echo "# $header VPN Disconnected $currentDate" >> "$logPath"
